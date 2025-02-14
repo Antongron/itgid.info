@@ -67,13 +67,13 @@ function showGameResult() {
       gameOverflowButton.addEventListener('click', () => {
           location.reload(); // Reload the page to restart the game
       });
-  } else if (percentageCaught > 50 && percentageCaught < 70) {
+  } else if (percentageCaught > 50 && percentageCaught < 71) {
       gameOverflowHeader.textContent = 'Ты можешь лучше!';
       gameOverflowButton.textContent = 'Попробовать снова';
       gameOverflowButton.addEventListener('click', () => {
           location.reload(); // Reload the page to restart the game
       });
-  } else if (percentageCaught > 30 && percentageCaught < 50) {
+  } else if (percentageCaught > 30 && percentageCaught < 51) {
       gameOverflowHeader.textContent = 'Ты даже не стараешься!';
       gameOverflowButton.textContent = 'Попробовать снова';
       gameOverflowButton.addEventListener('click', () => {
