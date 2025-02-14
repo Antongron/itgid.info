@@ -272,6 +272,12 @@ button:hover {
     }
   }
 
+  .popup-contaner {
+    display: flex;
+    width: 100%;
+    justify-content: center;
+  }
+
   .popup-messages {
     display: block;
     position: fixed;
@@ -298,12 +304,14 @@ button:hover {
   <div class="container">
     <h1>Привет!</h1>
     <h1>Поиграем?</h2>
-    <div class="popup-messages">
-        <div class="popup-count-1">Ты уверена?</div>
-        <div class="popup-count-2">Ты что, не хочешь поиграть?<img class="demon slightly-angry" src="images/processed_image_1.png"></div>
-        <div class="popup-count-3">Я начинаю злиться.<img class="demon angry" src="images/processed_image_2.png"></div>
-        <div class="popup-count-4">Ты не оставила мне выбора.<img class="demon really-angry" src="images/processed_image_3.png"></div>
-    </div>
+      <div class="popup-contaner">
+        <div class="popup-messages">
+            <div class="popup-count-1">Ты уверена?</div>
+            <div class="popup-count-2">Ты что, не хочешь поиграть?<img class="demon slightly-angry" src="images/processed_image_1.png"></div>
+            <div class="popup-count-3">Я начинаю злиться.<img class="demon angry" src="images/processed_image_2.png"></div>
+            <div class="popup-count-4">Ты не оставила мне выбора.<img class="demon really-angry" src="images/processed_image_3.png"></div>
+        </div>
+      </div>
     <div class="images">
         <img src="./images/gamepad.png" alt="будь моей Валентинкой">
     </div>
