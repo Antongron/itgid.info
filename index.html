@@ -272,19 +272,40 @@ button:hover {
     }
   }
 
+  .popup-messages {
+    display: block;
+    position: fixed;
+    z-index: 4;
+    background-color: antiquewhite;
+    border: 2px black solid;
+    border-radius: 4px;
+  }
+
+  /* Add this to your CSS */
+.buttons {
+    display: flex;
+    flex-wrap: wrap; /* Allow buttons to wrap to the next line if needed */
+    justify-content: center;
+    gap: 10px; /* Add some space between buttons */
+}
+
+.no {
+    font-size: 1em; /* Set the initial size of the "No" button */
+}
 </style>
 </head>
 <body>
   <div class="container">
-    <h1>Будь моей Валентинкой!</h1>
+    <h1>Привет!</h1>
+    <h1>Поиграем?</h2>
     <div class="popup-messages">
         <div class="popup-count-1">Ты уверена?</div>
-        <div class="popup-count-2">Ты что, не хочешь быть моей Валентинкой?<img class="demon slightly-angry" src="images/processed_image_1.png"></div>
+        <div class="popup-count-2">Ты что, не хочешь поиграть?<img class="demon slightly-angry" src="images/processed_image_1.png"></div>
         <div class="popup-count-3">Я начинаю злиться.<img class="demon angry" src="images/processed_image_2.png"></div>
         <div class="popup-count-4">Теперь я действительно зол.<img class="demon really-angry" src="images/processed_image_3.png"></div>
     </div>
     <div class="images">
-        <img src="./images/first.png" alt="будь моей Валентинкой">
+        <img src="./images/gamepad.png" alt="будь моей Валентинкой">
     </div>
     <div class="buttons">
         <button class="yes">Да</button>
