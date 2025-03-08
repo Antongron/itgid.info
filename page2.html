@@ -12,23 +12,23 @@
         .container {
             text-align: center;
             font-family: 'Sofia', cursive;
-        }
-
-        .catContainer {
-            display: flex;
-            justify-content: center;
-        }
-
-        .cat {
-            width: 340px;
-            height: 340px;
-            text-align: center;
-            font-family: 'Sofia', cursive;
             background-image: url(./images/cat.jpg);
-            background-size: contain; /* Растягивает изображение на весь блок */
-            background-position: center; /* Центрирует изображение */
-            background-repeat: no-repeat; /
-}
+            background-size: contain; /* Изменено с cover на contain */
+            background-position: center;
+            background-repeat: no-repeat;
+            height: 100vh;
+            width: 100vw;
+            position: relative;
+        }
+
+        /* Наклонный текст */
+        .container h1 {
+            transform: rotate(-10deg); /* Наклон текста на -10 градусов */
+            display: inline-block; /* Чтобы трансформация применялась корректно */
+            margin-top: 50px; /* Отступ сверху */
+            font-size: 3rem; /* Размер текста */
+            color: #ff1493; /* Цвет текста */
+        }
 
         /* Анимация салюта */
         .firework {
@@ -79,7 +79,7 @@
             margin-top: 150px;
         }
 
-        /* Дополнительные стили для сердечек (если нужно) */
+        /* Дополнительные стили для сердечек */
         .heart {
             width: 20px;
             height: 20px;
@@ -125,29 +125,17 @@
         <div class="fireworkContainer">
             <div class="firework"></div>
         </div>
-        </div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
-        <div class="heart"></div>
+        <!-- Сердечки -->
+        <div class="heart" style="top: 10%; left: 20%;"></div>
+        <div class="heart" style="top: 15%; left: 50%;"></div>
+        <div class="heart" style="top: 5%; left: 70%;"></div>
+        <div class="heart" style="top: 20%; left: 40%;"></div>
+        <div class="heart" style="top: 25%; left: 80%;"></div>
+        <div class="heart" style="top: 30%; left: 10%;"></div>
+        <div class="heart" style="top: 35%; left: 60%;"></div>
+        <div class="heart" style="top: 40%; left: 30%;"></div>
+        <div class="heart" style="top: 45%; left: 90%;"></div>
+        <div class="heart" style="top: 50%; left: 5%;"></div>
     </div>
-    <div class="catContainer">
-        <div class="cat"></div>
-    </div>
-
 </body>
 </html>
