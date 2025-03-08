@@ -3,41 +3,55 @@ const scoreDisplay = document.getElementById('score');
 const timerDisplay = document.getElementById('timer');
 
 let score = 0;
-let totalHearts = 0; // Track total hearts generated
+let totalHearts = 0;
 let timeLeft = 30;
-let speedMultiplier = 2; // Initial speed multiplier
+let speedMultiplier = 2;
 let gameInterval;
 let heartInterval;
 
-// Function to create a falling heart
 function createHeart() {
   const heart = document.createElement('div');
   heart.classList.add('heart');
-  heart.style.left = `${Math.random() * 260}px`; // Random horizontal position
+  heart.style.left = `${Math.random() * 260}px`;
   heart.style.top = '0px';
   heartsContainer.appendChild(heart);
-  totalHearts++; // Increment total hearts generated
+  totalHearts++;
 
-  // Move the heart down
-  const fallInterval = setInterval(() => {
-    const top = parseInt(heart.style.top) || 0;
+  let lastFrameTime = null;
+  let isRemoved = false;
+
+  const animate = (currentTime) => {
+    if (isRemoved) return;
+    
+    if (!lastFrameTime) lastFrameTime = currentTime;
+    const deltaTime = currentTime - lastFrameTime;
+    lastFrameTime = currentTime;
+
+    const top = parseFloat(heart.style.top) || 0;
+    
     if (top >= 360) {
-      clearInterval(fallInterval);
       heart.remove();
-    } else {
-      heart.style.top = `${top + 5 * speedMultiplier}px`; // Apply speed multiplier
+      isRemoved = true;
+      return;
     }
-  }, 100);
 
-  // Add click event to the heart
+    const newTop = top + (50 * speedMultiplier * deltaTime) / 1000;
+    heart.style.top = `${newTop}px`;
+    
+    requestAnimationFrame(animate);
+  };
+
+  requestAnimationFrame(animate);
+
   heart.addEventListener('click', () => {
+    if (isRemoved) return;
+    isRemoved = true;
     score++;
     scoreDisplay.textContent = score;
     heart.remove();
 
-    // Increase speed multiplier every 5 hearts caught
     if (score % 5 === 0) {
-      speedMultiplier += 0.6; // Increase speed by 20%
+      speedMultiplier += 0.6;
       console.log(`Speed increased! Current speed multiplier: ${speedMultiplier}`);
     }
   });
@@ -80,7 +94,7 @@ function showGameResult() {
           location.reload(); // Reload the page to restart the game
       });
   } else if (percentageCaught < 30) {
-      gameOverflowHeader.textContent = 'Надо нажимать на сердечки падающие сверху!';
+      gameOverflowHeader.textContent = 'Надо нажимать на тюльпаны падающие сверху!';
       gameOverflowButton.textContent = 'Попробовать снова';
       gameOverflowButton.addEventListener('click', () => {
           location.reload(); // Reload the page to restart the game
